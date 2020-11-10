@@ -13,6 +13,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet weak var product_name: UILabel!
     @IBOutlet weak var name_text: UITextField!
     @IBOutlet weak var photo_image: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +27,18 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         product_name.text = textField.text
-        print("123")
     }
     
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         print("tap to select image")
         // Hide the keyboard
-        /*
+
         name_text.resignFirstResponder()
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)*/
+        present(imagePickerController, animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
