@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
-                                <rect key="frame" x="10" y="54" width="394" height="524"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
+                                <rect key="frame" x="10" y="54" width="394" height="658"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHz-Xl-gWY">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="48"/>
@@ -42,25 +40,31 @@
                                             <outletCollection property="gestureRecognizers" destination="dyl-mW-n6X" appends="YES" id="fQ3-WZ-4aH"/>
                                         </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-xa-1Iu" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="548" width="394" height="110"/>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="fdm-Q0-wKh" firstAttribute="top" secondItem="XCN-df-jee" secondAttribute="bottom" constant="24" id="8X0-u3-zVp"/>
+                                    <constraint firstAttribute="trailing" secondItem="FsQ-xa-1Iu" secondAttribute="trailing" id="CQg-cc-2Uv"/>
                                     <constraint firstAttribute="trailing" secondItem="XCN-df-jee" secondAttribute="trailing" id="FD3-uF-RF6"/>
                                     <constraint firstItem="QHz-Xl-gWY" firstAttribute="leading" secondItem="FfB-Av-HKW" secondAttribute="leading" id="HC3-CO-h71"/>
                                     <constraint firstItem="XCN-df-jee" firstAttribute="leading" secondItem="FfB-Av-HKW" secondAttribute="leading" id="Jku-BE-3lu"/>
                                     <constraint firstAttribute="trailing" secondItem="QHz-Xl-gWY" secondAttribute="trailing" id="Lb8-6H-psZ"/>
+                                    <constraint firstItem="FsQ-xa-1Iu" firstAttribute="leading" secondItem="FfB-Av-HKW" secondAttribute="leading" id="eWG-GN-Nmi"/>
                                     <constraint firstItem="XCN-df-jee" firstAttribute="top" secondItem="QHz-Xl-gWY" secondAttribute="bottom" constant="24" id="oER-VS-FRi"/>
+                                    <constraint firstItem="FsQ-xa-1Iu" firstAttribute="top" secondItem="fdm-Q0-wKh" secondAttribute="bottom" constant="24" id="pLe-Vn-PbW"/>
                                     <constraint firstItem="QHz-Xl-gWY" firstAttribute="top" secondItem="FfB-Av-HKW" secondAttribute="top" id="vPN-jW-pQF"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FfB-Av-HKW" secondAttribute="trailing" constant="10" id="70R-JF-Mmp"/>
                             <constraint firstItem="FfB-Av-HKW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="OUW-yq-B8x"/>
                             <constraint firstItem="FfB-Av-HKW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tHd-kd-n5a"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="name_text" destination="XCN-df-jee" id="Q9n-gi-Foa"/>
@@ -80,8 +84,5 @@
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
