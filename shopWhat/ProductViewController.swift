@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProductViewController.swift
 //  shopWhat
 //
 //  Created by youngstudent2 on 2020/11/8.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ProductViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
-    @IBOutlet weak var product_name: UILabel!
+
     @IBOutlet weak var name_text: UITextField!
     @IBOutlet weak var photo_image: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    var product:Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        product_name.text = textField.text
+
     }
     
     

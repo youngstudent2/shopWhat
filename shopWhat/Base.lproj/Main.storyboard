@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cks-5u-V98">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,31 +9,87 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Your Products-->
+        <scene sceneID="OEB-fn-bco">
+            <objects>
+                <tableViewController id="nhD-op-Qxx" customClass="ProductTableViewController" customModule="shopWhat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e3a-qE-F8s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductTableViewCell" rowHeight="90" id="kc9-iw-rmG" customClass="ProductTableViewCell" customModule="shopWhat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kc9-iw-rmG" id="dvy-fs-WDf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="90N-0d-sBl">
+                                            <rect key="frame" x="0.0" y="0.0" width="99" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcI-iG-Lok">
+                                            <rect key="frame" x="107" y="11" width="287" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SK5-V1-rTj" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
+                                            <rect key="frame" x="107" y="40" width="251" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="SK5-V1-rTj"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="pcI-iG-Lok" id="hjo-u0-b5K"/>
+                                    <outlet property="photoImageView" destination="90N-0d-sBl" id="KPC-K1-y3d"/>
+                                    <outlet property="ratingControl" destination="SK5-V1-rTj" id="khX-S4-zWF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nhD-op-Qxx" id="E8T-Ki-Dbh"/>
+                            <outlet property="delegate" destination="nhD-op-Qxx" id="Zc9-nT-3u9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Products" id="D9V-nI-aei">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="5Ux-fZ-RWy">
+                            <connections>
+                                <segue destination="St8-bW-oxM" kind="presentation" identifier="AddItem" id="9jP-Lr-qdc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYY-zN-fiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.05797101449278" y="89.732142857142847"/>
+        </scene>
+        <!--New Product-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="shopWhat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProductViewController" customModule="shopWhat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
-                                <rect key="frame" x="10" y="54" width="394" height="658"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
+                                <rect key="frame" x="10" y="69" width="394" height="583"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHz-Xl-gWY">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入商品名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCN-df-jee">
-                                        <rect key="frame" x="0.0" y="72" width="394" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="394" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Q0-wKh">
-                                        <rect key="frame" x="0.0" y="130" width="394" height="394"/>
+                                        <rect key="frame" x="0.0" y="56.5" width="394" height="394"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fdm-Q0-wKh" secondAttribute="height" multiplier="1:1" id="LrU-vl-i2T"/>
@@ -42,20 +98,22 @@
                                             <outletCollection property="gestureRecognizers" destination="dyl-mW-n6X" appends="YES" id="fQ3-WZ-4aH"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-xa-1Iu" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="548" width="394" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-xa-1Iu" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="473" width="394" height="110"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="XCN-df-jee" firstAttribute="top" secondItem="FfB-Av-HKW" secondAttribute="top" id="5GN-6F-EHO"/>
                                     <constraint firstItem="fdm-Q0-wKh" firstAttribute="top" secondItem="XCN-df-jee" secondAttribute="bottom" constant="24" id="8X0-u3-zVp"/>
                                     <constraint firstAttribute="trailing" secondItem="XCN-df-jee" secondAttribute="trailing" id="FD3-uF-RF6"/>
-                                    <constraint firstItem="QHz-Xl-gWY" firstAttribute="leading" secondItem="FfB-Av-HKW" secondAttribute="leading" id="HC3-CO-h71"/>
                                     <constraint firstItem="XCN-df-jee" firstAttribute="leading" secondItem="FfB-Av-HKW" secondAttribute="leading" id="Jku-BE-3lu"/>
-                                    <constraint firstAttribute="trailing" secondItem="QHz-Xl-gWY" secondAttribute="trailing" id="Lb8-6H-psZ"/>
-                                    <constraint firstItem="XCN-df-jee" firstAttribute="top" secondItem="QHz-Xl-gWY" secondAttribute="bottom" constant="24" id="oER-VS-FRi"/>
                                     <constraint firstItem="FsQ-xa-1Iu" firstAttribute="top" secondItem="fdm-Q0-wKh" secondAttribute="bottom" constant="24" id="pLe-Vn-PbW"/>
-                                    <constraint firstItem="QHz-Xl-gWY" firstAttribute="top" secondItem="FfB-Av-HKW" secondAttribute="top" id="vPN-jW-pQF"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="FsQ-xa-1Iu"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -66,10 +124,13 @@
                             <constraint firstItem="FfB-Av-HKW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tHd-kd-n5a"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Product" id="G39-as-9UR">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Kxn-ry-aY1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RPH-9b-hfX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="name_text" destination="XCN-df-jee" id="Q9n-gi-Foa"/>
                         <outlet property="photo_image" destination="fdm-Q0-wKh" id="YtN-hq-YWK"/>
-                        <outlet property="product_name" destination="QHz-Xl-gWY" id="RK1-NG-zfW"/>
                         <outlet property="ratingControl" destination="FsQ-xa-1Iu" id="8gb-AQ-UX5"/>
                     </connections>
                 </viewController>
@@ -80,7 +141,41 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tds-CA-Hiw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cks-5u-V98" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U56-bs-Iah">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nhD-op-Qxx" kind="relationship" relationship="rootViewController" id="t5C-aR-LYC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pRg-Mp-buf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-726.08695652173924" y="89.732142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="swx-1i-s6t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="St8-bW-oxM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="odA-L6-ouE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oDW-pO-vxz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUX-0j-K8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
         </scene>
     </scenes>
     <resources>
