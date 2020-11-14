@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cks-5u-V98">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cks-5u-V98">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e3a-qE-F8s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductTableViewCell" rowHeight="90" id="kc9-iw-rmG" customClass="ProductTableViewCell" customModule="shopWhat" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
@@ -46,6 +44,7 @@
                                     <outlet property="nameLabel" destination="pcI-iG-Lok" id="hjo-u0-b5K"/>
                                     <outlet property="photoImageView" destination="90N-0d-sBl" id="KPC-K1-y3d"/>
                                     <outlet property="ratingControl" destination="SK5-V1-rTj" id="khX-S4-zWF"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="1eJ-wK-loh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,8 +73,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
-                                <rect key="frame" x="10" y="66" width="394" height="584"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
+                                <rect key="frame" x="10" y="66" width="394" height="641"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入商品名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCN-df-jee">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
@@ -83,8 +82,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="你的评价" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yuH-e8-l0F" userLabel="Comment text">
+                                        <rect key="frame" x="0.0" y="57" width="394" height="34"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="394" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Q0-wKh">
-                                        <rect key="frame" x="0.0" y="57" width="394" height="394"/>
+                                        <rect key="frame" x="0.0" y="114" width="394" height="394"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fdm-Q0-wKh" secondAttribute="height" multiplier="1:1" id="LrU-vl-i2T"/>
@@ -93,36 +98,49 @@
                                             <outletCollection property="gestureRecognizers" destination="dyl-mW-n6X" appends="YES" id="fQ3-WZ-4aH"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-xa-1Iu" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="474" width="394" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-xa-1Iu" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="531" width="394" height="110"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="XCN-df-jee" firstAttribute="top" secondItem="FfB-Av-HKW" secondAttribute="top" id="5GN-6F-EHO"/>
+                                    <constraint firstItem="yuH-e8-l0F" firstAttribute="leading" secondItem="FfB-Av-HKW" secondAttribute="leading" id="BP7-Pd-NJZ"/>
                                     <constraint firstAttribute="trailing" secondItem="XCN-df-jee" secondAttribute="trailing" id="FD3-uF-RF6"/>
                                     <constraint firstItem="XCN-df-jee" firstAttribute="leading" secondItem="FfB-Av-HKW" secondAttribute="leading" id="Jku-BE-3lu"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FfB-Av-HKW" secondAttribute="trailing" constant="10" id="70R-JF-Mmp"/>
                             <constraint firstItem="FfB-Av-HKW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="OUW-yq-B8x"/>
                             <constraint firstItem="FfB-Av-HKW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tHd-kd-n5a"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Product" id="G39-as-9UR">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Kxn-ry-aY1"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="RPH-9b-hfX"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Kxn-ry-aY1">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="Qhd-zH-5i4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RPH-9b-hfX">
+                            <connections>
+                                <segue destination="7ED-AM-EAf" kind="unwind" unwindAction="unwindToProductListWithSender:" id="HQs-Ia-w4z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="Kxn-ry-aY1" id="Z0x-Ud-sBs"/>
+                        <outlet property="comment_text" destination="yuH-e8-l0F" id="0Ph-YW-cbu"/>
                         <outlet property="name_text" destination="XCN-df-jee" id="Q9n-gi-Foa"/>
                         <outlet property="photo_image" destination="fdm-Q0-wKh" id="YtN-hq-YWK"/>
                         <outlet property="ratingControl" destination="FsQ-xa-1Iu" id="8gb-AQ-UX5"/>
+                        <outlet property="saveButton" destination="RPH-9b-hfX" id="EQB-Fh-TkC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="7ED-AM-EAf" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="dyl-mW-n6X">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="51W-HX-rvc"/>
@@ -165,13 +183,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUX-0j-K8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
+            <point key="canvasLocation" x="1071" y="-227"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oDW-pO-vxz"/>
+    </inferredMetricsTieBreakers>
 </document>
