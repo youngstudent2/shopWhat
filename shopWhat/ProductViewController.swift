@@ -96,8 +96,8 @@ class ProductViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         let name = name_text.text ?? ""
         let photo = photo_image.image
         let rating = ratingControl.rating
-        
-        product = Product(name: name, photo: photo, rating: rating)
+        let comment = comment_text.text ?? ""
+        product = Product(name: name, photo: photo, rating: rating,comment: comment)
         
         
     }
