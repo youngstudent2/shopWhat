@@ -68,7 +68,10 @@ class ProductViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
 
         name_text.resignFirstResponder()
         let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.sourceType = .camera
+        //imagePickerController.sourceType = .photoLibrary
+        imagePickerController.allowsEditing = true
+        
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
@@ -78,12 +81,24 @@ class ProductViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        /*
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following:\(info)")
         }
         photo_image.image = selectedImage
-        dismiss(animated: true, completion: nil)
         
+        dismiss(animated: true, completion: nil)
+        */
+        // The info dictionary may contain multiple representations of the image. You want to use the edit.
+        
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        // Set photoImageView to display the selected image.
+        photo_image.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue:UIStoryboardSegue,sender:Any?){

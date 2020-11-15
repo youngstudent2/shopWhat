@@ -15,13 +15,13 @@ class ProductTableViewController: UITableViewController {
         let photo1 = UIImage(named: "product1")
         let photo2 = UIImage(named: "product2")
         let photo3 = UIImage(named: "product3")
-        guard let product1 = Product(name: "Caprese Salad", photo: photo1, rating: 3) else {
+        guard let product1 = Product(name: "Caprese Salad", photo: photo1, rating: 3,comment: "zhen bu chuo") else {
             fatalError("Unable to instantiate product1")
         }
-        guard let product2 = Product(name: "Chicken and Potatoes", photo: photo2, rating: 3) else {
+        guard let product2 = Product(name: "Chicken and Potatoes", photo: photo2, rating: 3,comment: "zhen bu chuo") else {
             fatalError("Unable to instantiate product2")
         }
-        guard let product3 = Product(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
+        guard let product3 = Product(name: "Pasta with Meatballs", photo: photo3, rating: 3,comment: "zhen bu chuo") else {
             fatalError("Unable to instantiate product3")
         }
         products += [product1,product2,product3]

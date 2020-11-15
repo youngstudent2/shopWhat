@@ -73,7 +73,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Av-HKW">
                                 <rect key="frame" x="10" y="66" width="394" height="641"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入商品名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCN-df-jee">
@@ -88,7 +88,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="394" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Q0-wKh">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="394" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Q0-wKh">
                                         <rect key="frame" x="0.0" y="114" width="394" height="394"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -98,7 +98,7 @@
                                             <outletCollection property="gestureRecognizers" destination="dyl-mW-n6X" appends="YES" id="fQ3-WZ-4aH"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-xa-1Iu" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-xa-1Iu" customClass="RatingControl" customModule="shopWhat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="531" width="394" height="110"/>
                                     </stackView>
                                 </subviews>
